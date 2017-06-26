@@ -10,24 +10,8 @@ using namespace std;
 
 const int N = 50;
 int main() {
-	Mat I = imread("test.jpg");//, CV_LOAD_IMAGE_COLOR);
-	//I.at<Vec3b>(Point(x, y)).val[0] = 1;
-	imshow("awd", I);
-	//Mat I2;
-//	//Сетка
-//	for (int i = 0; i < I.rows; i++)
-//		for (int j = 0; j < I.cols; j++)
-//			if ((i % 20 == 10 && j % 2 == 1) ||
-//				(j % 50 == 25 && i % 2 == 1))
-//			{
-//				I.at<Vec3b>(i, j)[0] = 255;
-//				I.at<Vec3b>(i, j)[1] = 255;
-//				I.at<Vec3b>(i, j)[2] = 255;
-//			}
-//	waitKey(0);
-////	imwrite("test1.jpg", I);
-//	imshow("image01_res.jpg", I);
-	//waitKey(0);
+	Mat I = imread("test.jpg");
+	imshow("Main", I);
 	vector<vector<double>> A;
 	A.resize(N);
 	for (int i = 0; i < N; i++)
@@ -79,7 +63,6 @@ int main() {
 		}
 	}
 
-	imshow("faff", I);
 	cout << Avg << endl;
 	//for (int i = 0; i < N; i++) {
 	//	for (int j = 0; j < N; j++) {
@@ -163,103 +146,12 @@ int main() {
 							I.at<Vec3b>(Point(i * I.cols / N + x, j * I.rows / N + y)).val[c] = 255;
 						else if (I.at<Vec3b>(Point(i * I.cols / N + x, j * I.rows / N + y)).val[c] + Avg - In < 0)
 							I.at<Vec3b>(Point(i * I.cols / N + x, j * I.rows / N + y)).val[c] = 0;
-					}
-
-				
-
-
-						
-
-					
-					
+					}	
 				}
-			
 			}
 		}
 	}
-	imshow("kh",I);
-	//cout << endl; cout << endl;
-
-	//vector<vector<double>> B;
-	//B.resize(N);
-	//for (int i = 0; i < N; i++)
-	//	B[i].resize(N-1);
-	//for (int i = 0; i < N; i++) {
-	//	for (int j = 0; j < N - 1; j++) {
-	//		B[i][j] = (A[i][j+1] + A[i][j]) / 2;
-	//	}
-	//}
-
-	///*for (int i = 0; i < N; i++) {
-	//	for (int j = 0; j < N-1; j++) {
-	//		cout << B[i][j] << " ";
-	//	}
-	//	cout << endl;
-	//}*/
-
-	//
-	///*cout << endl << endl;
-	//for (int i = 0; i < N - 1; i++) {
-	//	for (int j = 0; j < N; j++) {
-	//		cout << C[i][j] << " ";
-	//	}
-	//	cout << endl;
-	//}*/
-
-	//cout << endl << endl;
-
-	//vector<double> X;
-	//X.resize(N - 1);
-	//for (int i = 0; i < N - 1; i++)
-	//	X[i] = i + 1;
-
-	//for (int i = 0; i < N; i++)
-	//{
-	//	tk::spline s;
-	//	s.set_points(X, B[i]);    // currently it is required that X is already sorted
-	//	cout << s(0.5) << " ";
-	//	A[i][0] = s(0.5);
-	//	for (int j = 0; j < N-1; j++)
-	//	{
-	//		cout << s(X[j] + 0.5) << " ";
-	//		A[i][j + 1] = s(X[j] + 0.5);
-	//	}
-	//	cout << endl;
-	//}
-
-	//vector<vector<double>> C;
-	//C.resize(N - 1);
-	//for (int i = 0; i < N - 1; i++)
-	//	C[i].resize(N);
-	//for (int i = 0; i < N - 1; i++) {
-	//	for (int j = 0; j < N; j++) {
-	//		C[i][j] = (A[i][j] + A[i + 1][j]) / 2;
-	//	}
-	//}
-
-	//cout << endl << endl;
-
-	//vector<double> temp;
-	//temp.resize(N - 1);
-	//for (int i = 0; i < N; i++)
-	//{
-	//	for (int j = 0; j < N - 1; j++)
-	//		temp[j] = C[j][i];
-	//	tk::spline s;
-	//	s.set_points(X, temp);    // currently it is required that X is already sorted
-	//	cout << s(0.5) << " ";
-	//	A[i][0] = s(0.5);
-	//	for (int j = 0; j < N - 1; j++)
-	//	{
-	//		cout << s(X[j] + 0.5) << " ";
-	//		A[i][j + 1] = s(X[j] + 0.5);
-	//	}
-	//	cout << endl;
-	//}
-
-	////Mat I2 = I;
-	////I2 *= 2;
-	////imshow("test2.jpg", I2);
+	imshow("Result",I);
 	waitKey(0);
 	return 0;
 }
