@@ -1,9 +1,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
-#include "spline.h"
 #include <opencv2/highgui.hpp>
-#include <vector>
 #include <iostream>
 using namespace cv;
 using namespace std;
@@ -126,7 +124,7 @@ int main() {
 
 					for (int i = 0; i < 8; i++)
 					{
-						if (B[i] < 0)
+						if (B[i] <= 0)
 							B[i] = 0;
 						if (B[i] >= N)
 							B[i] = N - 1;
