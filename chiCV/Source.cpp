@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
 	imshow("Result3", dst2);
 	waitKey(0);
 	Mat img_clahe;
-	img.simpleCorrection(I, dst3, img_clahe);
+	img.simpleCorrection(I, img_clahe);
 	imshow("ResultClashe", img_clahe);
 	waitKey(0);
 	return 0;

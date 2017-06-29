@@ -207,9 +207,9 @@ void Image::normalizedColor(Mat I, Mat& dst)
 	}
 }
 
-void Image::simpleCorrection(cv::Mat I, cv::Mat & dst3, cv::Mat& img_clahe)
+void Image::simpleCorrection(cv::Mat I, cv::Mat& img_clahe)
 {
-	dst3 = I.clone();
+	cv::Mat dst3 = I.clone();
 	cvtColor(I, dst3, CV_BGR2Lab);
 	// Extract the L channel
 	std::vector<cv::Mat> lab_planes(3);
