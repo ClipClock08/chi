@@ -242,3 +242,5 @@ ModelManifest.xml
 .fake/
 /Chi.sln
 /chiCV/chiCV.vcxproj.filters
+/chiCV/opencv_world320.dll
+/chiCV/opencv_world320d.dll
